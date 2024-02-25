@@ -101,11 +101,14 @@ button:hover{
     border-color: #215ee2;
 }
 
+.image-container {
+    max-width: 100%;
+  }  
+
 .image-wrapper{
     display: flex;
     margin-top: 5vh;
     position: relative;
-
 }
 
 .image-wrapper img{
@@ -122,6 +125,12 @@ button:hover{
 @media screen and (max-width: 1075px) {
     .content{
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .image-container {
+      max-width: 100%;
     }
 }
 
