@@ -41,17 +41,21 @@ body{
     -webkit-backdrop-filter: blur(11.6px);
 }
 
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
 .logo{
     display: inline-block;
     font-size: 30px;
     font-weight: 600;
-    margin-top: -10px;
-
 }
 
 ul.nav-links{
     margin: 0;
-    float:right;
+    float: right;
     display: flex;
     list-style: none;
 }
