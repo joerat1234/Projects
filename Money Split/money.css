@@ -34,12 +34,22 @@ p{
     color: white;
 }
 
+input{
+    color: black;
+}
+
 body {
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     height: 100vh;
 }
+
+ul{
+    list-style: none;
+    font-size: 20px;
+}
+
 
 #total{
     display: none;
