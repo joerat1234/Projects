@@ -30,15 +30,63 @@ H1{
     box-shadow: 0 4px 30px rgba(249, 247, 247, 0.1);
 }
 
+button{
+    color: black;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: lightgray;
+    border-color: transparent;
+    border-radius: 5%;
+    box-shadow: none;
+}
+
 p{
     color: white;
 }
 
+input{
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 body {
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(to right, #285266, #376372, #3c7e9a);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     height: 100vh;
+}
+
+ul{
+    list-style: none;
+    font-size: 20px;
+    margin-left: -40px;
+    font-weight: 700;
+}
+
+ul li {
+    position: relative; 
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li span{
+    position: relative;
+    right:0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: white;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover{
+    background: lightgray;
 }
 
 #total{
