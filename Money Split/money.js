@@ -11,20 +11,44 @@
 
 const nameInput = document.getElementById("name-input");
 const listContainer = document.getElementById("list-container");
+const people = []
+
 
 function saveName(){
-    if(nameInput.value === ""){
+
+    person = nameInput.value
+    if(person === ""){
         alert("Please add a name!");
     }
     else{
+
+        people.push({
+            name: person,
+            totalPaid: 0
+        })
+
+
         let li = document.createElement("li");
-        li.innerHTML = nameInput.value
+        li.innerHTML = person;
+        li.setAttribute("id", person);
         listContainer.appendChild(li);
-        let input = document.createElement("input");
-        listContainer.appendChild(input);
+        let moneyInput = document.createElement("input")
+        moneyInput.setAttribute("id", person)
+        moneyInput.setAttribute("type", "number");
+
+        moneyInput.addEventListener("keypress", (event) => {
+            if(event.key != "Enter") return
+            addNewBill(event)
+            event.target.value = null
+        })
+
+        li.appendChild(moneyInput);
         let span = document.createElement("span");
         span.innerHTML = "\u00d7";
         li.appendChild(span);
+        let total = document.createElement("p");
+        total.innerHTML = "Total: 0";
+        li.appendChild(total)
     }
     nameInput.value = "";
 }
@@ -37,3 +61,16 @@ listContainer.addEventListener("click", function(e){
         e.target.parentElement.remove();
     }
 }, false);
+
+const addNewBill = (event) => {
+    amount = event.target.value
+    if(amount == null) return
+    name = event.target.parentElement.id
+    people.forEach(person => {
+        if(person.name == name){
+            person.totalPaid += parseInt(amount)
+            let person_li = document.getElementById(name)
+            person_li.lastChild.innerHTML = "Total: " + person.totalPaid
+        }
+    })
+}
