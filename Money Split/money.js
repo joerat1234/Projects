@@ -11,7 +11,10 @@
 
 const nameInput = document.getElementById("name-input");
 const listContainer = document.getElementById("list-container");
-const people = []
+const totalContainer = document.getElementById("total-container");
+const settleContainer = document.getElementById("settle-container")
+const people = [];
+let totalPaidOverall = 0;
 
 
 function saveName(){
@@ -21,7 +24,6 @@ function saveName(){
         alert("Please add a name!");
     }
     else{
-
         people.push({
             name: person,
             totalPaid: 0
@@ -32,12 +34,12 @@ function saveName(){
         li.innerHTML = person;
         li.setAttribute("id", person);
         listContainer.appendChild(li);
-        let moneyInput = document.createElement("input")
-        moneyInput.setAttribute("id", person)
+        let moneyInput = document.createElement("input");
+        moneyInput.setAttribute("id", person);
         moneyInput.setAttribute("type", "number");
 
         moneyInput.addEventListener("keypress", (event) => {
-            if(event.key != "Enter") return
+            if(event.key != "Enter") return;
             addNewBill(event)
             event.target.value = null
         })
@@ -48,7 +50,7 @@ function saveName(){
         li.appendChild(span);
         let total = document.createElement("p");
         total.innerHTML = "Total: 0";
-        li.appendChild(total)
+        li.appendChild(total);
     }
     nameInput.value = "";
 }
@@ -68,9 +70,21 @@ const addNewBill = (event) => {
     name = event.target.parentElement.id
     people.forEach(person => {
         if(person.name == name){
-            person.totalPaid += parseInt(amount)
-            let person_li = document.getElementById(name)
-            person_li.lastChild.innerHTML = "Total: " + person.totalPaid
+            person.totalPaid += parseInt(amount);
+            let person_li = document.getElementById(name);
+            person_li.lastChild.innerHTML = "Total: " + person.totalPaid;
+            updateTotalPaidOverall();
         }
     })
+   
 }
+
+const updateTotalPaidOverall = () => {
+    totalPaidOverall = 0;
+    people.forEach(person => {
+        totalPaidOverall += person.totalPaid;
+    });
+    totalContainer.innerHTML = "Total Paid Overall: £" + totalPaidOverall; 
+}
+
+
