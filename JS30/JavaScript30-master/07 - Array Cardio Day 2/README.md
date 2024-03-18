@@ -1,4 +1,5 @@
 <h1>Summary of learning</h1>
+(APOLOGIES, BACKTICKS NOT WORKING)
 
 <h3>Different array functions</h3>
 
@@ -13,7 +14,12 @@ To make a variable of the current year: `const currentYear = (new Date()).getFul
 
 <h3>{} in console log</h3>
 Using console.log({}) will also show the name of the variable as well as its value.
-`console.log({isAdult});`  will lead to the output: `{isAdult: true}`
+
+console.log({isAdult});
+<br>
+will lead to the output: 
+<br>
+`{isAdult: true}`
 
 <h3>Deleting from an array</h3>
 There a 2 ways to do this. First, you can remove the data from the current array:
@@ -26,3 +32,4 @@ Second, you can make a new array without the data you didn't want:
       ...comments.slice(index + 1)
     ];`
 Here, if you do not spread the data (...) you will return arrays within an array, instead of pushing the old comments into the new array.
+`
