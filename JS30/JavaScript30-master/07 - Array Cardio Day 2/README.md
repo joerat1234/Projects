@@ -1,5 +1,4 @@
 <h1>Summary of learning</h1>
-(APOLOGIES, BACKTICKS NOT WORKING)
 
 <h3>Different array functions</h3>
 
