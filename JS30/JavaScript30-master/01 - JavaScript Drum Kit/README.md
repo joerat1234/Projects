@@ -5,15 +5,17 @@ Each key on the keyboard has an assigned number, this can be used with eventList
 
 `function playSound(e){`
 <br>
-`const audio = document.querySelector(``audio[data-key="${e.keyCode}"]``);`
+`  const audio = document.querySelector(``audio[data-key="${e.keyCode}"]``);`
 <br>
 `  const key = document.querySelector(``.key[data-key="${e.keyCode}"]``);`
 
 Here is how to add an eventlistener to transitionend to make changes to css when the transition has finished:
-`const keys = document.querySelectorAll(".key");
-  keys.forEach(key => key.addEventListener("transitionend", removeTransition));
-  window.addEventListener("keydown", playSound);
-`
+<br>
+`const keys = document.querySelectorAll(".key");`
+<br>
+`keys.forEach(key => key.addEventListener("transitionend", removeTransition));`
+<br>
+`window.addEventListener("keydown", playSound);`
 
 <h3>Make audio start again on click</h3>
 To prevent an audio file from needing to reach completion before the next time it can be replayed, simply change the start time of the audio to 0 
